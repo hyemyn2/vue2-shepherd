@@ -3,6 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/vue2-shepherd.js",
+      "require": "./dist/vue2-shepherd.umd.cjs"
+    },
+    "./dist/": "./dist/"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
