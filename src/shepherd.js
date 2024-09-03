@@ -11,7 +11,9 @@ const install = function installVueShepherd(Vue) {
     Vue.prototype[shepherdKey] = useShepherd
 };
 
+const Vue2Shepherd = { install };
+
 if (typeof window !== 'undefined' && window.Vue) window.Vue.use(plugin)
 
 // Default export is library as a whole, registered via Vue.use()
-export { install, useShepherd };
+export default Vue2Shepherd;
