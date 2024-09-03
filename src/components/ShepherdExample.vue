@@ -273,23 +273,19 @@
 </template>
 <script>
 export default {
-    data() {
-        return {
-            installElement: null,
-            usageElement: null
-        }
-    },
     computed: {
         tour () {
             return this.$shepherd({
                 useModalOverlay: true,
             })
-        },
+        }
+    },
+    methods: {
         createTourSteps () {
             this.tour.addSteps([
                 {
                     attachTo: {
-                        element: this.installElement,
+                        element: this.$refs.installElement,
                         on: 'top'
                     },
                     buttons: [
@@ -311,7 +307,7 @@ export default {
                 },
                 {
                     attachTo: {
-                        element: this.usageElement,
+                        element: this.$refs.usageElement,
                         on: 'top'
                     },
                     buttons: [
@@ -332,12 +328,11 @@ export default {
                     text: 'Usage test'
                 }
             ])
-
             return this.tour
         }
     },
     mounted() {
-        this.createTourSteps.start()
+        this.createTourSteps().start()
     }
 }
 </script>
