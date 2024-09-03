@@ -1,6 +1,6 @@
 {
   "name": "vue2-shepherd",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "main": "dist/vue2-shepherd.js",
   "files": [
