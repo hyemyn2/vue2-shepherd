@@ -272,21 +272,21 @@
     </div>
 </template>
 <script>
-import { useShepherd } from '../shepherd.js';
-const tour = useShepherd({
-    useModalOverlay: true,
-});
 export default {
     data() {
         return {
             installElement: null,
-            usageElement: null,
-            tour
+            usageElement: null
         }
     },
     computed: {
+        tour () {
+            return this.$shepherd({
+                useModalOverlay: true,
+            })
+        },
         createTourSteps () {
-            tour.addSteps([
+            this.tour.addSteps([
                 {
                     attachTo: {
                         element: this.installElement,
@@ -333,7 +333,7 @@ export default {
                 }
             ])
 
-            return tour
+            return this.tour
         }
     },
     mounted() {
